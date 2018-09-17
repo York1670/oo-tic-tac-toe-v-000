@@ -32,7 +32,7 @@ def move(index, token = "X")
 end
 
 def position_taken?(index)
-  @index != " " && @index != ""
+  @index = " " || @index = ""
 end
 
 def valid_move?(board, index)
