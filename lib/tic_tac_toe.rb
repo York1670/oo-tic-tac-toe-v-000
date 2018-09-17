@@ -27,8 +27,8 @@ def input_to_index(user_input)
 end
 
 def move(index, token)
-  @index = @board[input_to_index]
-  @token =
+  @index = @board[@input_to_index]
+  @token = @current_player
 end
 
 def position_taken?(board, location)
