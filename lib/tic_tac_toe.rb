@@ -31,7 +31,7 @@ def move(index, token = "X")
   @token = @current_player
 end
 
-def position_taken?(board, location)
+def position_taken?(index)
   @index != " " && @index != ""
 end
 
