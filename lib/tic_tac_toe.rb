@@ -27,7 +27,8 @@ def input_to_index(user_input)
 end
 
 def move(index, token)
-
+  @index = @board[input_to_index]
+  @token =
 end
 
 def position_taken?(board, location)
@@ -37,5 +38,17 @@ end
 def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
+
+def turn
+
+end
+
+def current_player
+    turn_count % 2 == 0 ? "X" : "O"
+  end
+
+  def turn_count
+    @board.count{|token| token == "X" || token == "O"}
+  end
 
 end
