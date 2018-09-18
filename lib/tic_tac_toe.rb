@@ -59,63 +59,65 @@ class TicTacToe
   end
 
   def won?
-  WIN_COMBINATIONS.each do |win_combination|
-    win_index_1 = win_combination[0]
-    win_index_2 = win_combination[1]
-    win_index_3 = win_combination[2]
+    WIN_COMBINATIONS.each do |win_combination|
+      win_index_1 = win_combination[0]
+      win_index_2 = win_combination[1]
+      win_index_3 = win_combination[2]
 
-    position_1 = @board[win_index_1]
-    position_2 = @board[win_index_2]
-    position_3 = @board[win_index_3]
+      position_1 = @board[win_index_1]
+      position_2 = @board[win_index_2]
+      position_3 = @board[win_index_3]
 
-    if position_1 == "X" && position_2 == "X" && position_3 == "X"
-      return win_combination
-    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-      return win_combination
+      if position_1 == "X" && position_2 == "X" && position_3 == "X"
+        return win_combination
+      elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+        return win_combination
+      end
+    end
+    false
+  end
+
+  def full?
+    full_board = @board.all? do |element|
+      element == "X" || element == "O"
+    end
+    puts full_board
+  end
+
+  def draw?
+    full? && ! won?
+  end
+
+  def over?
+    full? || won? || draw?
+  end
+
+  def winner
+    if won? == false
+      nil
+    else
+      won_list = won?
+      position = won_list[0]
+      return @board[position]
     end
   end
-  false
-end
 
-def full?
-  full_board = @board.all? do |element|
-    element == "X" || element == "O"
-  end
-  puts full_board
-end
+  def play
+    counter = 0
 
-def draw?
-  full? && ! won?
-end
+    while counter < 10 && over? == false
+      counter += 1
+      turn
+    end
 
-def over?
-  full? || won? || draw?
-end
+    the_winner = winner
 
-def winner
-  if won? == false
-    nil
-  else
-    won_list = won?
-    position = won_list[0]
-    return @board[position]
-  end
-end
+    if draw? == true
+      puts "Cat's Game!"
+    else
+      puts "Congratulations #{the_winner}!"
+    end
 
-def play
-  counter = 0
+  end  #end of play
 
-  while counter < 10 && over? == false
-    counter += 1
-    turn
-  end
-
-  the_winner = winner
-
-  if draw? == true
-    puts "Cat's Game!"
-  else
-    puts "Congratulations #{the_winner}!"
-  end
-
-end
+end  # end of class
