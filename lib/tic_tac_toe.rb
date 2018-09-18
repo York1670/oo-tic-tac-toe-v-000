@@ -77,21 +77,4 @@ class TicTacToe
     false
   end
 
-  def full?
-    full_board = @board.all? do |element|
-      element == "X" || element == "O"
-    end
-    puts full_board
-  end
-
-  def draw?
-    full? && ! won?
-  end
-
-  def over?
-    full? || won? || draw?
-  end
-
-  
-
 end #class TicTacToe
