@@ -113,7 +113,7 @@ class TicTacToe
     the_winner = winner
 
     if draw? == true
-      print "Cat's Game!"
+      puts "Cat's Game!"
     else
       puts "Congratulations #{the_winner}!"
     end
