@@ -115,7 +115,7 @@ class TicTacToe
     if draw? == true
       print "Cat's Game!"
     else
-      print "Congratulations #{the_winner}!"
+      puts "Congratulations #{the_winner}!"
     end
   end # def play
 
