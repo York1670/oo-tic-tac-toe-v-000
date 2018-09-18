@@ -102,4 +102,20 @@ class TicTacToe
     end
   end
 
+  def play
+    counter = 0
+
+    while counter < 10 && over? == false
+      counter += 1
+      turn
+    end
+
+    the_winner = winner
+
+    if draw? == true
+      print "Cat's Game!"
+    else
+      print "Congratulations #{the_winner}!"
+    end
+
 end #class TicTacToe
