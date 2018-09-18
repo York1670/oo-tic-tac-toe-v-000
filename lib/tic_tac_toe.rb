@@ -101,5 +101,15 @@ class TicTacToe
       return @board[position]
     end
   end
+  
+  def play
+    counter = 0
+
+    while counter < 10 && over?(board) == false
+      counter += 1
+      turn
+    end
+  end #def play
+
 
 end #class TicTacToe  
