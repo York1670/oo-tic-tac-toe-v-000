@@ -83,7 +83,7 @@ class TicTacToe
     end
     full_board
   end
-  
+
   def draw?
     full? && ! won?
   end
