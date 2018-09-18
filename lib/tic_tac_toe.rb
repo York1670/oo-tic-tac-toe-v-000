@@ -92,4 +92,15 @@ def over?
   full? || won? || draw?
 end
 
+def winner
+  if won? == false
+    nil
+  else
+    won_list = won?
+    position = won_list[0]
+    return @board[position]
+  end
+end
+
+
 end
