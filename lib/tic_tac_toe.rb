@@ -117,5 +117,6 @@ class TicTacToe
     else
       print "Congratulations #{the_winner}!"
     end
+  end # def play
 
 end #class TicTacToe
