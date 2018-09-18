@@ -107,6 +107,7 @@ class TicTacToe
 
     while counter < 10 && over? == false
       counter += 1
+      turn
     end
 
     the_winner = winner
