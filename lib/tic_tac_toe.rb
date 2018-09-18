@@ -28,7 +28,7 @@ end
 
 def move(index, token = "X")
   @board[index] = token
-  @token = current_player
+  token = current_player
 end
 
 def position_taken?(index)
