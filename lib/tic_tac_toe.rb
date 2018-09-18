@@ -77,4 +77,45 @@ class TicTacToe
   false
 end
 
+def full?
+  full_board = @board.all? do |element|
+    element == "X" || element == "O"
+  end
+  full_board
+end
+
+def draw?
+  full? && ! won?
+end
+
+def over?
+  full? || won? || draw?
+end
+
+def winner
+  if won? == false
+    nil
+  else
+    won_list = won?
+    position = won_list[0]
+    return @board[position]
+  end
+end
+
+def play(board)
+  counter = 0
+
+  while counter < 10 && over?(board) == false
+    counter += 1
+    turn(board)
+  end
+
+  the_winner = winner(board)
+
+  if draw?(board) == true
+    puts "Cat's Game!"
+  else
+    puts "Congratulations #{the_winner}!"
+  end
+
 end
