@@ -117,7 +117,7 @@ class TicTacToe
       print "Cat's Game!"
     else
       puts "Congratulations #{the_winner}!"
-      "Congratulations #{the_winner}!"
+      print "Congratulations #{the_winner}!"
     end
 
   end  #end of play
