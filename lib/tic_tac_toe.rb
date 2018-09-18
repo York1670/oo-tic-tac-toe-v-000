@@ -118,6 +118,4 @@ def play
     puts "Congratulations #{the_winner}!"
   end
 
-
-
 end
