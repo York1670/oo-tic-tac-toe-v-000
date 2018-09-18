@@ -76,5 +76,13 @@ class TicTacToe
     end
     false
   end
+  
+  def full?
+    full_board = @board.all? do |element|
+      element == "X" || element == "O"
+    end
+    full_board
+  end
+
 
 end #class TicTacToe
